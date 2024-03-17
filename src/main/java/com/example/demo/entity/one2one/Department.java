@@ -1,5 +1,6 @@
 package com.example.demo.entity.one2one;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ public class Department {
 	@Column(nullable = false, length = 50)
 	private String name;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL) // 雙向關係需要使用聯集新增
 	@JoinColumn(name = "manager_id")
 	private Manager manager;
 

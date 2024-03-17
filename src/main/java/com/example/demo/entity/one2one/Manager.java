@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +18,8 @@ public class Manager {
 	@Column(nullable = false, length = 50)
 	private String name;
 	
+	@OneToOne(mappedBy = "manager") // 藉由department的manager來維護關聯關係，
+	private Department department;
 
 	public Long getId() {
 		return id;
@@ -32,6 +35,14 @@ public class Manager {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 	
 	
