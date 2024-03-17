@@ -17,7 +17,6 @@ public class Manager {
 	@Column(nullable = false, length = 50)
 	private String name;
 	
-	private Department department;
 
 	public Long getId() {
 		return id;
@@ -33,14 +32,6 @@ public class Manager {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Department getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
 	}
 	
 	
